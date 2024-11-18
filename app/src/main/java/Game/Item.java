@@ -1,3 +1,4 @@
+import java.util.List;
 
 // Define types of items that share actions / properties
 enum ItemType {
@@ -35,17 +36,19 @@ enum ItemType {
 // All other item classes should inherit this class
 public class Item {
     String name;
-    ItemType type;
+    List<ItemType> types;
     String desc;
 
-    Item(String n, String t, String d) {
+    Item(String n, String[] ts, String d) {
         name = n;
-        type = ItemType.toType(t);
+        for (String ty : ts) types.add(ItemType.valueOf(ty));
         desc = d;
     }
 
     public String inspect() {
-        String message = "This is a " + this.name + ", a kind of " + this.type.name() + ". Description: " + this.desc;
+        String alltypes = "";
+        for (ItemType t: types) alltypes += t.name() + " ";
+        String message = "This is a " + this.name + ", a kind of " + alltypes + ". Description: " + this.desc;
         return message;
     }
 }
