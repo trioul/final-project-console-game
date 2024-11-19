@@ -7,7 +7,6 @@
 plugins {
     // Apply the java plugin to add support for building a CLI application in Java.
     id 'application'
-    id 'java'
 }
 
 repositories {
@@ -17,12 +16,18 @@ repositories {
 
 dependencies {
     // Use JUnit test framework.
-    testImplementation libs.junit
-
+    //testImplementation libs.junit
     // This dependency is used by the application.
     implementation libs.guava
-
     implementation 'org.yaml:snakeyaml:2.0'
+}
+
+testing {
+    suites {
+        test {
+            useJUnit('4.13.2')
+        }
+    }
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

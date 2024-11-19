@@ -11,7 +11,5 @@ plugins {
     //id 'java'
 }
 
-
-
 rootProject.name = 'final-project-console-game'
 include('app')
