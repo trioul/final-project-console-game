@@ -1,11 +1,9 @@
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
 
 public class Room {
-
-    Item[] items;
-    String desc;
-
-    public Room() {
-        System.out.println("Loading");
-    }
-
+    public String  name;
+    public String[] contents;
 }

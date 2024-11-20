@@ -6,16 +6,13 @@ public class Game {
     static String name;
     static int choice;
 
+    // helper function for printing
     private static void printSlow(String toPrint) {
         char[] chars = toPrint.toCharArray();
-
         for (int i=0; i < chars.length; i++) {
             System.out.print(chars[i]);
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+            try { Thread.sleep(25);} 
+            catch (InterruptedException e) {Thread.currentThread().interrupt();}
         }
         System.out.println("");
         try {
@@ -36,6 +33,7 @@ public class Game {
         GameState state = new GameState(name);
 
         // beginning flavor text
+        /**
         printSlow("Welcome, "+name+".");
         System.out.println("");
         printSlow("You've been studying in the library for hours and decide to take a break by walking around.");
@@ -43,7 +41,7 @@ public class Game {
         printSlow("You go downstairs into the basement, find an archive room, and get distracted by an old book describing the first version of Java (\'The Java Tutorial\' by Mary Campione and Kathy Walrath, published in 1997).");
         System.out.println("");
         printSlow("After reading for a while, you look up and notice that the library looks... different. The lighting seems a little dimmer, the room smells of cigarettes, and you could have sworn the carpet was a different pattern when you first walked into this room.");
-
+        */
         while (!state.finished) {
             System.out.println("What do you want to do next?");
             System.out.println("[1]: Look around the room.");
@@ -55,10 +53,11 @@ public class Game {
 
             switch (choice) {
                 case 1:
-                    printSlow(state.room.desc);
+                    LoadYAML yl = new LoadYAML("room");
+                    //printSlow(state.room.desc);
                     printSlow("You can see the following items:");
-                    for (int i=0; i<state.room.items.length; i++) {
-                        printSlow(state.room.items[i].toString());
+                    for (int i=0; i<state.room.contents.length; i++) {
+                        printSlow(state.room.contents[i].toString());
                     }
 
                 default:
