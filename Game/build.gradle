@@ -6,6 +6,7 @@
 
 plugins {
     // Apply the java plugin to add support for building a CLI application in Java.
+    id 'java'
     id 'application'
 }
 
