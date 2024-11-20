@@ -51,4 +51,9 @@ public class Item {
         String message = "This is a " + this.name + ", a kind of " + alltypes + ". Description: " + this.desc;
         return message;
     }
+
+    @Override
+    public String toString() {
+        return this.inspect();
+    }
 }

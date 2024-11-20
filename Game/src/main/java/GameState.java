@@ -5,6 +5,7 @@ public class GameState {
     HashMap<Room, Boolean> visited = new HashMap<Room, Boolean>();
     String name;
     boolean finished;
+    Room room;
     //Inventory inv;
 
     public GameState(String name) {
