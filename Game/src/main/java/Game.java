@@ -5,6 +5,7 @@ public class Game {
 
     static String name;
     static int choice;
+    public LoadYAML yl = new LoadYAML();
 
     // helper function for printing
     private static void printSlow(String toPrint) {
@@ -53,7 +54,7 @@ public class Game {
 
             switch (choice) {
                 case 1:
-                    LoadYAML yl = new LoadYAML("room");
+
                     //printSlow(state.room.desc);
                     printSlow("You can see the following items:");
                     for (int i=0; i<state.room.contents.length; i++) {
@@ -62,10 +63,6 @@ public class Game {
 
                 default:
                     printSlow("Unidentified input, try again?");
-
-
-
-
             }
         }
         // User interaction
