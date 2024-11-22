@@ -1,12 +1,13 @@
 import java.util.Random;
+import java.util.List;
 
 public class Animal extends Item {
     int min;
     int max;
     private Random rn;
 
-    public Animal(String name, String[] type, String desc, int min_damage, int max_damage) {
-        super(name, type, desc);
+    public Animal(String name, List<String> type, String desc, String use, String act, int min_damage, int max_damage) {
+        super(name, type, desc, use, act);
         min = min_damage;
         max = max_damage;
         rn = new Random();

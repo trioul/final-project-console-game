@@ -1,0 +1,8 @@
+"Starting Room":
+  contents: [poison frog]
+  doors:
+      green: "Closet"
+"Closet":
+  contents: [broom, mop, bucket, poster]
+  doors:
+      green: "Starting Room"

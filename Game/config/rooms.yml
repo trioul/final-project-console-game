@@ -1,6 +1,0 @@
-room1:
-  name: "Starting Room"
-  contents: [poisonFrog]
-room2:
-  name: "Closet"
-  contents: []

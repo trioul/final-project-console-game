@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 
 // Define types of items that share actions / properties
 enum ItemType {
@@ -13,19 +14,14 @@ enum ItemType {
         switch (s) {
             case "Weapon":
                 return ItemType.Weapon;
-
             case "Healing":
                 return ItemType.Healing;
-
             case "Key":
                 return ItemType.Key;
-
             case "Animal":
                 return ItemType.Animal;
-
             case "Plant":
                 return ItemType.Plant;
-
             default:
                 return ItemType.Item;
         }
@@ -36,13 +32,18 @@ enum ItemType {
 // All other item classes should inherit this class
 public class Item {
     String name;
-    List<ItemType> types;
+    ArrayList<ItemType> types = new ArrayList<ItemType>();
     String desc;
+    String use;
+    String action;
+    Boolean used = false;
 
-    Item(String n, String[] ts, String d) {
+    Item(String n, List<String> ts, String d, String u, String a) {
         name = n;
         for (String ty : ts) types.add(ItemType.valueOf(ty));
         desc = d;
+        use = u;
+        action = a;
     }
 
     public String inspect() {
@@ -52,8 +53,12 @@ public class Item {
         return message;
     }
 
+    public void use() {
+        used = true;
+    }
+
     @Override
     public String toString() {
-        return this.inspect();
+        return this.name;
     }
 }
