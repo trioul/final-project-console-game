@@ -14,33 +14,47 @@ poison frog:
       action: "drop"
   min-damage: 2
   max-damage: 4
-broom:
-  type: [Item]
-  description: "It's for sweeping."
-  use:
-      text: "The floor looks slightly less dusty."
-      action: "null"
-bucket:
-  type: [Item]
-  description: "It's empty."
-  use:
-      text: "You put the bucket on your head. You feel marginally safer."
+broom: 
+    type: [Item]
+    description: "Its for sweeping"
+    use:
+      text: "The floor is looking mighty fine"
       action: "null"
 mop:
-  type: [Item]
-  description: "It's for mopping."
-  use:
-      text: "The floor looks slightly more damp."
+    type: [Item]
+    description: "Its for mopping"
+    use:
+        text: "Be warned the floor is wet"
+        action: "null"
+bucket:
+    type: [Item]
+    description: "Home depot bucket"
+    use:
+      text: "You put the bucket on your head and jump up and down"
       action: "null"
 poster:
-  type: [Item]
-  description: "A classic."
-  use:
-      text: "What are you going to do with a poster?"
+    type: [Item]
+    description: "Tyler the Creator Poster, Nice!"
+    use:
+      text: "No BBLS i like A cups"
       action: "null"
 book:
-  type: [Item]
-  description: "An old book about Java. It seems to have some purple residue on it."
-  use:
-      text: "You place the book gently on the floor."
-      action: "drop"
+    type: [Item]
+    description: "A book about java, tears will come"
+    use:
+      text: "starts flipping the pages"
+      action: "null"
+chair:
+    type: [Weapon]
+    description: "Metal looking ahh chair"
+    use:
+      text: "You avidly launch a chair at their head"
+      action: "null"
+    min-damage: 5
+    max-damage: 15
+secretKey:
+    type: [Item]
+    description: "Shiny! i wonder where it leads"
+    use:
+      text: "Youve unlocked the heavy door in front of you"
+      action: "unlock"

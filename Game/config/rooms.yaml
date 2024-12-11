@@ -1,8 +1,34 @@
 "Starting Room":
   contents: [poison frog]
   doors:
-      green: "Closet"
+    green: "Closet"
+    north: "Library"
+    east: "Garden"
+    south: "Dungeon"  # Added south door to the Dungeon
 "Closet":
-  contents: [broom, mop, bucket, poster]
+  contents: [broom, mop]
   doors:
-      green: "Starting Room"
+    green: "Starting Room"
+    south: "Library"
+    west: "Dungeon"  # Added west door to the Dungeon
+"Library":
+  contents: [book, bookshelf, chair, ]
+  doors:
+    south: "Starting Room"
+    west: "Closet"
+    east: "Secret Room"
+"Garden":
+  contents: []
+  doors:
+    west: "Starting Room"
+"Secret Room":
+  contents: []
+  doors:
+    west: "Library"
+    locked: true  # Assuming this room has a locked door
+"Dungeon":
+  contents: [bucket, poster, secretKey]
+  doors:
+    north: "Starting Room"  # Connecting to the north side of the dungeon
+    west: "Closet"
+    east: "Secret Room"
